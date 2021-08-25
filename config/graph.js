@@ -19,7 +19,7 @@ export default {
       host: 'localhost',
       port: 5432,
       user: 'graph-node',
-      password: '',
+      password: 'let-me-in',
     },
     production: {
       name: '',

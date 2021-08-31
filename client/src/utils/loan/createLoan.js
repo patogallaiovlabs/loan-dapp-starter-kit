@@ -31,9 +31,11 @@ export default async function createLoan({
   });
 
   const viewingKey = loanNote.getView();
+  console.log('Encrypting message...');
   const encryptedViewingKey = await encryptMessage(publicKey, viewingKey);
 
-  await Web3Service.useContract('LoanDapp')
+  console.log('Sending LoanDapp.createLoan()');
+  let result = await Web3Service.useContract('LoanDapp')
     .method('createLoan')
     .send(
       noteHash,
@@ -48,5 +50,6 @@ export default async function createLoan({
       proofData,
     );
 
+  console.log('Result LoanDapp.createLoan():', result);
   return loanNote;
 }

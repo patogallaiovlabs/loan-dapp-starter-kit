@@ -11,7 +11,7 @@ const LoanUtilities = artifacts.require('./LoanUtilities.sol');
 module.exports = async (deployer, network) => {
   let aceContract;
 
-  if (network === 'development' || network === 'test') {
+  if (network === 'development' || network === 'rsk' || network === 'test') {
     aceContract = await ACE.deployed();
   }
 
@@ -22,7 +22,7 @@ module.exports = async (deployer, network) => {
   const loanDappContract = await LoanDapp.deployed();
   for (let i = 0; i < settlementCurrencies.length; i += 1) {
     let settlementContractAddress;
-    if (network === 'development' || network === 'test') {
+    if (network === 'development' || network === 'rsk' || network === 'test') {
       const settlementContract = await deployer.deploy(SettlementToken);
       settlementContractAddress = settlementContract.address;
     } else {

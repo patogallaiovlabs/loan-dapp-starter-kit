@@ -72,7 +72,7 @@ class QueryDataHandler extends PureComponent {
       variables,
       subscribeToMore,
     } = this.props;
-
+    console.log('QueryDataHandler.subscribe().subscribeToMore()', query, variables);
     this.subscription = subscribeToMore({
       document: SUBSCRIBE_QUERY(query),
       variables: variables,
@@ -89,7 +89,7 @@ class QueryDataHandler extends PureComponent {
     const {
       processData,
     } = this.props;
-
+    console.log('QueryDataHandle.handleReceiveSubscription()', subscriptionData);
     this.setState({
       data: processData(subscriptionData && subscriptionData.data),
     });

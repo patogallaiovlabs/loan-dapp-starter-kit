@@ -50,7 +50,7 @@ class CreateLoanForm extends PureComponent {
       data,
     } = this.state;
     const loan = transformDataForContract(data);
-
+    console.log('Loan transformed:', loan);
     this.setState(
       {
         isLoading: true,
@@ -71,8 +71,11 @@ class CreateLoanForm extends PureComponent {
 
   async createLoan(loan) {
     try {
+
+      console.log('createLoan()', loan);
       const loanNote = await createLoan(loan);
 
+      console.log('loanNote', loanNote);
       this.setState({
         loanNote,
       });
@@ -90,12 +93,13 @@ class CreateLoanForm extends PureComponent {
       loanId,
       loanNote,
     } = this.state;
-
+    console.log('approveLoan()', loanId, loanNote);
     try {
       await approveLoan({
         loanId,
         loanNote,
       });
+      console.log('end approveLoan()', loanId, loanNote);
     } catch (error) {
       errorLog(error);
       this.setState({
@@ -109,11 +113,15 @@ class CreateLoanForm extends PureComponent {
       onCreateLoan,
     } = this.props;
 
+    console.log('resetForm()');
     this.resetForm();
+
+    console.log('call onCreateLoan()');
     onCreateLoan();
   }
 
   handleLoanCreated = (loanId) => {
+    console.log('Loan created with id:', loanId);
     this.setState(
       {
         loanId,

@@ -16,8 +16,8 @@ services:
       postgres_pass: let-me-in
       postgres_db: graph-node
       ipfs: 'ipfs:5001'
-      ethereum: 'development:http://host.docker.internal:8545'
-      RUST_LOG: debug
+      ethereum: 'development:http://host.docker.internal:4445'
+      RUST_LOG: trace
       RUST_BACKTRACE: 1
       RUST_BACKTRACE: full
   ipfs:
@@ -28,6 +28,7 @@ services:
       - ./data/ipfs:/data/ipfs
   postgres:
     image: postgres
+    user: postgres
     command: postgres -c shared_preload_libraries=pg_stat_statements -c pg_stat_statements.track=all -c max_connections=200
     ports:
       - '5432:5432'

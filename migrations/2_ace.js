@@ -21,7 +21,7 @@ const {
 } = utils;
 
 module.exports = async (deployer, network) => {
-  if (network === 'development' || network === 'test') {
+  if (network === 'development' || network === 'rsk' || network === 'test') {
     await deployer.deploy(ACE);
     await deployer.deploy(AdjustSupply);
     await deployer.deploy(BilateralSwap);

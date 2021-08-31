@@ -62,6 +62,7 @@
     "migrate": "babel-node scripts/run migrate",
     "resetdb": "babel-node scripts/run resetdb",
     "start": "babel-node scripts/run start",
+    "start-rsk": "babel-node scripts/run start --rsk=rsk",
     "test": "NODE_ENV=test babel-node scripts/run test"
   },
   "config": {

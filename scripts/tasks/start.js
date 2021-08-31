@@ -4,6 +4,10 @@ import {
 import chalk from 'chalk';
 import detectPort from 'detect-port';
 import ganacheInstance from '../lib/ganacheInstance';
+import rskInstance from '../lib/rskInstance';
+import {
+  argv,
+} from '../utils/cmd';
 import graphNodeDockerInstance from '../lib/graphNodeDockerInstance';
 import {
   log,
@@ -121,7 +125,12 @@ export default function start({
 
   const doCloseDocker = makeCloseChildProcessCallback('docker');
 
-  runningProcesses.ganache = ganacheInstance({
+  let rsk = argv('rsk');
+  console.log("Starting NODE:", rsk);
+  console.log(" --- with args: ", process.argv);
+  const nodeInstance = rsk == 'rsk' ? rskInstance : ganacheInstance;
+
+  runningProcesses.ganache = nodeInstance({
     onClose: makeCloseChildProcessCallback('ganache'),
     onError: handleError,
   }).next(async () => {

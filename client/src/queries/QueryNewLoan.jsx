@@ -14,7 +14,7 @@ const query = `
 
 const processData = (data) => {
   const loans = get(data, 'loans');
-
+  console.log('QueryNewLoan.processData()', loans);
   return {
     loans,
   };

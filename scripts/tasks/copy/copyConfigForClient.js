@@ -27,6 +27,9 @@ const constructEndpoints = (network) => {
     case 'development':
       host = '127.0.0.1';
       break;
+    case 'rsk':
+      host = '127.0.0.1';
+      break;
     default:
   }
 
@@ -47,6 +50,9 @@ export default function copyConfigForClient() {
         networks: {
           development: {
             ...constructEndpoints('development'),
+          },
+          rsk: {
+            ...constructEndpoints('rsk'),
           },
         },
       };

@@ -50,7 +50,7 @@ class Web3Service {
   }
 
   async initWithSignerProvider() {
-    const provider = new SignerProvider('http://127.0.0.1:8545', {
+    const provider = new SignerProvider('http://127.0.0.1:4445', {
       signTransaction: (rawTx, cb) => {
         AuthService.ks.signTransaction(rawTx, cb);
       },
@@ -236,10 +236,13 @@ class Web3Service {
       method(...methodArgs)[type]({
         from: address,
         ...methodSetting,
-        gas: 6000000
+        gas: 6000000 //TODO change with proper gas limit (?).
       })
-        .on('transactionHash', () => {
-          resolve();
+        .on('receipt', (receipt) => {
+          console.log('Web3Service.send()', receipt);
+        })
+        .on('transactionHash', (txhash) => {
+          resolve(txhash);
         })
         .on('error', (error) => {
           reject(error);
@@ -261,6 +264,7 @@ class Web3Service {
         let contract;
         if (!contractAddress) {
           contract = this.contracts[contractName];
+          console.log('Contract selected:', contract);
         } else if (this.abis[contractName]) {
           contract = new this.web3.eth.Contract(
             this.abis[contractName],

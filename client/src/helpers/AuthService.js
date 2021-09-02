@@ -176,7 +176,7 @@ class AuthService {
     ethWallet.keystore.createVault({
       password,
       seedPhrase,
-      hdPathString: "m/44'/60'/0'/0'",
+      hdPathString: "m/44'/60'/0'/0",
     }, async (err, ks) => {
       if (err) {
         reject(err);
@@ -203,7 +203,7 @@ class AuthService {
     ethWallet.keystore.createVault({
       password,
       seedPhrase,
-      hdPathString: "m/44'/60'/0'/0'",
+      hdPathString: "m/44'/60'/0'/0",
     }, async (err, ks) => {
       if (err) {
         reject(err);

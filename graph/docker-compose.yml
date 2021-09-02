@@ -17,7 +17,7 @@ services:
       postgres_db: graph-node
       ipfs: 'ipfs:5001'
       ethereum: 'development:http://host.docker.internal:4445'
-      RUST_LOG: trace
+      RUST_LOG: debug
       RUST_BACKTRACE: 1
       RUST_BACKTRACE: full
   ipfs:

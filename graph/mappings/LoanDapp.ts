@@ -18,8 +18,10 @@ import {
   User,
   Loan,
 } from "../types/schema";
+import { log } from '@graphprotocol/graph-ts'
 
 export function addSettlementCurrency(event: SettlementCurrencyAdded): void {
+  log.info('##### =---- addSettlementCurrency ----= ####', []);
   let currencyAddress = event.params.settlementAddress;
   ZKERC20Template.create(currencyAddress);
 
@@ -35,7 +37,7 @@ export function addSettlementCurrency(event: SettlementCurrencyAdded): void {
 export function createLoan(event: LoanCreated): void {
   let loanAddress = event.params.id;
   LoanTemplate.create(loanAddress);
-
+  log.info('##### =---- Loan created ----= ####', []);
   let loanVariables = event.params.loanVariables;
   let notionalNoteId = event.params.notional.toHex();
   let note = new Note(notionalNoteId);
@@ -71,6 +73,7 @@ export function createLoan(event: LoanCreated): void {
 }
 
 export function borrowerApproveLoan(event: LoanApprovedForSettlement): void {
+  log.info('##### =---- borrowerApproveLoan ----= ####', []);
   let loanId = event.params.loanId.toHex();
   let loan = new Loan(loanId);
   if (loan != null) {
@@ -80,6 +83,7 @@ export function borrowerApproveLoan(event: LoanApprovedForSettlement): void {
 }
 
 export function createViewRequest(event: ViewRequestCreated): void {
+  log.info('##### =---- createViewRequest ----= ####', []);
   let lenderId = event.params.lender.toHex();
   let user = User.load(lenderId);
   if (user == null) {
@@ -97,6 +101,7 @@ export function createViewRequest(event: ViewRequestCreated): void {
 }
 
 export function approveViewRequest(event: ViewRequestApproved): void {
+  log.info('##### =---- approveViewRequest ----= ####', []);
   let loanId = event.params.loanId.toHex();
   let accessId = event.params.accessId.toHex();
   let userId = event.params.user.toHex();
@@ -120,6 +125,7 @@ export function approveViewRequest(event: ViewRequestApproved): void {
 }
 
 export function settleLoan(event: SettlementSuccesfull): void {
+  log.info('##### =---- settleLoan ----= ####', []);
   let lenderAddress = event.params.from;
   let lenderId = lenderAddress.toHex();
   let lender = User.load(lenderId);
@@ -138,6 +144,7 @@ export function settleLoan(event: SettlementSuccesfull): void {
 }
 
 export function approveNoteAccess(event: NoteAccessApproved): void {
+  log.info('##### =---- approveNoteAccess ----= ####', []);
   let noteId = event.params.note.toHex();
   let userId = event.params.user.toHex();
   let accessId = event.params.accessId.toHex();

@@ -8,7 +8,7 @@ dataSources:
     name: LoanDapp
     network: development
     source:
-      address: '0xeFb80DB9E2d943A492Bd988f4c619495cA815643'
+      address: '0xA691E4A2a5C8665b48F15B336d0A68241a4af43D'
       abi: LoanDapp
     mapping:
       kind: ethereum/events
@@ -45,7 +45,7 @@ dataSources:
           abi: Loan
         mapping:
           kind: ethereum/events
-          apiVersion: 0.0.2
+          apiVersion: 0.0.1
           language: wasm/assemblyscript
           file: ./graph/mappings/Loan.ts
           entities:
@@ -67,7 +67,7 @@ dataSources:
           abi: ZKERC20
         mapping:
           kind: ethereum/events
-          apiVersion: 0.0.2
+          apiVersion: 0.0.1
           language: wasm/assemblyscript
           file: ./graph/mappings/ZKERC20.ts
           entities:

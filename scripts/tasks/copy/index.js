@@ -107,7 +107,7 @@ const copyContractAddressesForTheGraph = prevAddresses =>
       const pattern = new RegExp(`(address:)(\\s)+'(${address})'`);
       console.log('### Task - Copy - > ',pattern, newAddress.toLowerCase());
       //newConfig = newConfig.replace(pattern, `$1 '${newAddress.toLowerCase()}'`);
-      newConfig = newConfig.replace(pattern, `$1 '${newAddress.toLowerCase()}'`);
+      newConfig = newConfig.replace(pattern, `$1 '${newAddress}'`);
     });
 
     fs.writeFile(graphConfigPath, newConfig, (error) => {

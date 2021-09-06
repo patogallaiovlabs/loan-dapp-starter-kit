@@ -1,7 +1,7 @@
 import {
   CreateNote,
   DestroyNote,
-} from '../types/LoanDapp/templates/ZKERC20/ZKERC20';
+} from '../types/templates/ZKERC20/ZKERC20';
 import {
   Note,
   Loan,

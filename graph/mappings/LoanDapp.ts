@@ -10,7 +10,7 @@ import {
 import {
   Loan as LoanTemplate,
   ZKERC20 as ZKERC20Template,
-} from "../types/LoanDapp/templates";
+} from "../types/templates";
 import {
   Currency,
   Note,

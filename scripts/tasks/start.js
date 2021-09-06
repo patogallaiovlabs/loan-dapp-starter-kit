@@ -131,7 +131,7 @@ export default function start({
   const nodeInstance = rsk == 'rsk' ? rskInstance : ganacheInstance;
 
   runningProcesses.ganache = nodeInstance({
-    onClose: makeCloseChildProcessCallback('ganache'),
+    //onClose: makeCloseChildProcessCallback('ganache'),
     onError: handleError,
   }).next(async () => {
     log('Recreating database...');

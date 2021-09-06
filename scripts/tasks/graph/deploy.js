@@ -49,7 +49,7 @@ export default function deploy({
   const manifestPath = getManifest();
 
   return instance(
-    `graph deploy ${projectName} ${manifestPath} --debug --ipfs ${ipfs} --node ${node}`,
+    `graph deploy ${projectName} ${manifestPath} --debug --ipfs ${ipfs} --node ${node} -l v1`,
     {
       onReceiveErrorOutput: handleReceiveOutput,
       onError,

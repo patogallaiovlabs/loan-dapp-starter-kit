@@ -2,7 +2,7 @@ import {
   LoanPayment,
   LoanDefault,
   LoanRepaid,
-} from '../types/LoanDapp/templates/Loan/Loan';
+} from '../types/templates/Loan/Loan';
 import {
   Loan,
 } from '../types/schema';

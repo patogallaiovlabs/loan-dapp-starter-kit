@@ -8,11 +8,11 @@ dataSources:
     name: LoanDapp
     network: development
     source:
-      address: '0xA691E4A2a5C8665b48F15B336d0A68241a4af43D'
+      address: '0x337D2c07A69bfFB26C6015145838E68d9a97E276'
       abi: LoanDapp
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.4
       language: wasm/assemblyscript
       entities:
         - Loan
@@ -24,6 +24,7 @@ dataSources:
       eventHandlers:
         - event: SettlementCurrencyAdded(uint256,address)
           handler: addSettlementCurrency
+          topic0: '0xf75dfe1f50fa42916f700d8c79fb1fcff4c19665c1eff22a1873f0a6ccdc0e42'
         - event: LoanCreated(address,address,bytes32,string,uint256[],uint256)
           handler: createLoan
         - event: LoanApprovedForSettlement(address)
@@ -34,51 +35,51 @@ dataSources:
           handler: approveViewRequest
         - event: NoteAccessApproved(uint256,bytes32,address,string)
           handler: approveNoteAccess
-        - event: SettlementSuccesfull(address,address,address,uint256)
+        - event: SettlementSuccesfull(indexed address,indexed address,address,uint256)
           handler: settleLoan
       file: ./graph/mappings/LoanDapp.ts
-    templates:
-      - name: Loan
-        kind: ethereum/contract
-        network: development
-        source:
-          abi: Loan
-        mapping:
-          kind: ethereum/events
-          apiVersion: 0.0.1
-          language: wasm/assemblyscript
-          file: ./graph/mappings/Loan.ts
-          entities:
-            - Loan
-          abis:
-            - name: Loan
-              file: ./build/abis/Loan.json
-          eventHandlers:
-            - event: LoanPayment(string,uint256)
-              handler: receivePayment
-            - event: LoanDefault()
-              handler: markLoanAsDefault
-            - event: LoanRepaid()
-              handler: markLoanAsRepaid
-      - name: ZKERC20
-        kind: ethereum/contract
-        network: development
-        source:
-          abi: ZKERC20
-        mapping:
-          kind: ethereum/events
-          apiVersion: 0.0.1
-          language: wasm/assemblyscript
-          file: ./graph/mappings/ZKERC20.ts
-          entities:
-            - Note
-              Loan
-              User
-          abis:
-            - name: ZKERC20
-              file: ./build/abis/ZKERC20.json
-          eventHandlers:
-            - event: CreateNote(address,bytes32,bytes)
-              handler: createNote
-            - event: DestroyNote(address,bytes32,bytes)
-              handler: destroyNote
+templates:
+  - kind: ethereum/contract
+    name: Loan
+    network: development
+    source:
+      abi: Loan
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./graph/mappings/Loan.ts
+      entities:
+        - Loan
+      abis:
+        - name: Loan
+          file: ./build/contracts/Loan.json
+      eventHandlers:
+        - event: LoanPayment(string,uint256)
+          handler: receivePayment
+        - event: LoanDefault()
+          handler: markLoanAsDefault
+        - event: LoanRepaid()
+          handler: markLoanAsRepaid
+  - kind: ethereum/contract
+    name: ZKERC20
+    network: development
+    source:
+      abi: ZKERC20
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      file: ./graph/mappings/ZKERC20.ts
+      entities:
+        - Note
+          Loan
+          User
+      abis:
+        - name: ZKERC20
+          file: ./build/contracts/ZKERC20.json
+      eventHandlers:
+        - event: CreateNote(indexed address,indexed bytes32,bytes)
+          handler: createNote
+        - event: DestroyNote(indexed address,indexed bytes32,bytes)
+          handler: destroyNote

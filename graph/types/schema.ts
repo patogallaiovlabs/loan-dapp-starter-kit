@@ -102,7 +102,7 @@ export class Note extends Entity {
 
   get access(): Array<string> | null {
     let value = this.get("access");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -235,7 +235,7 @@ export class Loan extends Entity {
 
   get lender(): string | null {
     let value = this.get("lender");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toString();
@@ -297,7 +297,7 @@ export class Loan extends Entity {
 
   get settledAt(): BigInt | null {
     let value = this.get("settledAt");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toBigInt();
@@ -314,7 +314,7 @@ export class Loan extends Entity {
 
   get repaidAt(): BigInt | null {
     let value = this.get("repaidAt");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toBigInt();
@@ -331,7 +331,7 @@ export class Loan extends Entity {
 
   get lastInterestWithdrawAt(): BigInt | null {
     let value = this.get("lastInterestWithdrawAt");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toBigInt();
@@ -357,7 +357,7 @@ export class Loan extends Entity {
 
   get viewRequests(): Array<string> | null {
     let value = this.get("viewRequests");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -374,7 +374,7 @@ export class Loan extends Entity {
 
   get lenderAccess(): Array<string> | null {
     let value = this.get("lenderAccess");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -391,7 +391,7 @@ export class Loan extends Entity {
 
   get balance(): Array<string> | null {
     let value = this.get("balance");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -448,7 +448,7 @@ export class User extends Entity {
 
   get publicKey(): string | null {
     let value = this.get("publicKey");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toString();
@@ -465,7 +465,7 @@ export class User extends Entity {
 
   get loans(): Array<string> | null {
     let value = this.get("loans");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -482,7 +482,7 @@ export class User extends Entity {
 
   get approvedLoans(): Array<string> | null {
     let value = this.get("approvedLoans");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -499,7 +499,7 @@ export class User extends Entity {
 
   get settledLoans(): Array<string> | null {
     let value = this.get("settledLoans");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -516,7 +516,7 @@ export class User extends Entity {
 
   get balance(): Array<string> | null {
     let value = this.get("balance");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();
@@ -533,7 +533,7 @@ export class User extends Entity {
 
   get balanceAccess(): Array<string> | null {
     let value = this.get("balanceAccess");
-    if (value === null) {
+    if (value === null || value.kind == ValueKind.NULL) {
       return null;
     } else {
       return value.toStringArray();

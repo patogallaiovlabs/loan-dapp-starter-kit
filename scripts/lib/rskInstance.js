@@ -135,7 +135,7 @@ export default function ganacheInstance({
   };
 
   const handleClear = async () => {
-    await killPort(port);
+    //await killPort(port);
     log(`Clear process running on port ${port}`);
   };
 

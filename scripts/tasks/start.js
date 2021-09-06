@@ -126,8 +126,6 @@ export default function start({
   const doCloseDocker = makeCloseChildProcessCallback('docker');
 
   let rsk = argv('rsk');
-  console.log("Starting NODE:", rsk);
-  console.log(" --- with args: ", process.argv);
   const nodeInstance = rsk == 'rsk' ? rskInstance : ganacheInstance;
 
   runningProcesses.ganache = nodeInstance({

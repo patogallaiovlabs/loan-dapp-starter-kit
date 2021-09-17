@@ -50,7 +50,7 @@ class Web3Service {
   }
 
   async initWithSignerProvider() {
-    const provider = new SignerProvider('http://127.0.0.1:4445', {
+    const provider = new SignerProvider('http://3.121.224.242:4444', {
       signTransaction: (rawTx, cb) => {
         AuthService.ks.signTransaction(rawTx, cb);
       },

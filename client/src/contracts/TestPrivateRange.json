@@ -1,0 +1,602 @@
+{
+  "contractName": "TestPrivateRange",
+  "abi": [
+    {
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "fallback"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.4+commit.9549d8ff\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"fallback\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/patricio/workspace/research/privacy/aztec/loan-dapp/contracts/TestAdjustSupply.sol\":\"TestPrivateRange\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":500},\"remappings\":[]},\"sources\":{\"/Users/patricio/workspace/research/privacy/aztec/loan-dapp/contracts/TestAdjustSupply.sol\":{\"keccak256\":\"0x51fa05d8c240b3c4721418ee28ce15e034326e681bea39a855bebc1cbc0436ae\",\"urls\":[\"bzzr://294a3f7216a693e8020294099a9fbaa1ac11c954a1d9714301d3f04f20b7b18d\"]},\"@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupply.sol\":{\"keccak256\":\"0x476eb98b4cf0c113b309825e78df858566e5c01017d7e8bcd011b5d286077771\",\"urls\":[\"bzzr://b51eeeb5bff424029915ebd6632573dbca665c9ed42f789943352cccf10a208c\"]},\"@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupplyABIEncoder.sol\":{\"keccak256\":\"0x4c31720931e879c1c52aae16508049eb7be7e887076d2fb6f0c9b383c9ad40cc\",\"urls\":[\"bzzr://53d1435ecdd89350432ac2fb6b3f11af6a0aaf8fbe71d0c21cd7eb35a1992491\"]},\"@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwap.sol\":{\"keccak256\":\"0xb03e19b179e93e21e334de8d81e78e5cc78bc2d15b9a7235afedad02047c7740\",\"urls\":[\"bzzr://93173ef9d4599281513ea080842a976969616114e509b3d88c43043c2e67b999\"]},\"@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwapABIEncoder.sol\":{\"keccak256\":\"0x7bb83c13f9f12fbd0e8d20341af6b0dc6f50267e4f142516719ef6d6613a1170\",\"urls\":[\"bzzr://350af470c37ec936b525bdbf212721e05a9f03393aa6189e92960ce3b49782d6\"]},\"@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputation.sol\":{\"keccak256\":\"0x843a4bd4c406750921d4d7ad15f5f18c789b6838b8bfb66ad44b0347e9a245dd\",\"urls\":[\"bzzr://4b1e2ea80642cfc44d7469773838eab72f6b7afa8ef55f22680797667df2991d\"]},\"@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputationABIEncoder.sol\":{\"keccak256\":\"0xbc181498e64e41c2244bd84f58429fae83a1a38edbaa11700196bf8abc206e6d\",\"urls\":[\"bzzr://fd32ed415d5bd59f5caaf8b1b1ce5f6a842faef92b1a81745a8980d69f5c28da\"]},\"@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol\":{\"keccak256\":\"0x8304cf7a8a81cf0084bf4005d677447b4a2c6fe700d4a9b3b431954e58a93396\",\"urls\":[\"bzzr://c748b5f7b5416ef4a8f2b4d5ad6391b25d198e3c398f543e62c154cbef79e9da\"]},\"@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplitABIEncoder.sol\":{\"keccak256\":\"0xdbb2cfbf88f4499b6134eb0bd167146e923750eb42474df2811c9c71e47d8e5e\",\"urls\":[\"bzzr://2b8b94a4907370caf514febf49d511d589bdfa191a76b7fce175339c9d03c834\"]},\"@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol\":{\"keccak256\":\"0x7618758be08b63307ceb4f9ac6abafa95dfb5033d15f6280007afd46f1742ab0\",\"urls\":[\"bzzr://c74536d5532b0ccecdc053102bdaac97050ab3ab6cfa93285e48a3bdd35b8a3e\"]},\"@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRangeABIEncoder.sol\":{\"keccak256\":\"0x1d429dd888630ffd1f5a2405e5d2311de088be61ad76bbe90bc5329dc34adc98\",\"urls\":[\"bzzr://6af6af340880b7eaf7a6f9fafefdee103488891f557b306563d5bb1d81bc5009\"]},\"@aztec/protocol/contracts/interfaces/AdjustSupplyInterface.sol\":{\"keccak256\":\"0x3b074bf4ac07f2ad7d425aa6459fb63b9ba7b9ff017d26e11499a88ee71d0a48\",\"urls\":[\"bzzr://faed44c41dc3eb30d46ae0b3eef05981d8c770260c248c4af43418149e587b90\"]},\"@aztec/protocol/contracts/interfaces/DividendComputationInterface.sol\":{\"keccak256\":\"0x5e4fae111dcec71a8352da02506e5b418ca7f021b318f58bd209fcc733803bcb\",\"urls\":[\"bzzr://fd1eac4a583d38147a86f943039076626508377a2edd73ed3c38b25e082b0933\"]},\"@aztec/protocol/contracts/interfaces/JoinSplitInterface.sol\":{\"keccak256\":\"0x6c2e40e1b01321931df29ec8adc595ed83ef12d79acdea335b9f00ea8cd332da\",\"urls\":[\"bzzr://3410d95356b49fdaf6a32e9bb76f53771686eae3fc9ace637d93d4c9a628daf2\"]},\"@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol\":{\"keccak256\":\"0xf2d6b68ee4f5d29443f626b5cb75c0ac571c811223c9b1c6f9f45999bc15758a\",\"urls\":[\"bzzr://c12d9a355986fcf6cfd7d857ae6617b123657e2c7eead07f78cd2c0b4361a8a0\"]},\"@aztec/protocol/contracts/libs/LibEIP712.sol\":{\"keccak256\":\"0x119f317ec5164bc17af01c76692222cbb809d363d2556cc8a88f557d6985f45e\",\"urls\":[\"bzzr://9cb18637b5753ba65b600b9e1d8a36c84737202be091952bd76c088c350ac90e\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506107aa806100206000396000f3fe608060405234801561001057600080fd5b50610019610023565b6060604052610249565b60443560805260643560a0526101443561010401600260037f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000018061012435066024356102a05260006102c05260006102e05261007f83866104c5565b608083026103000160005b848110156102155760c081026020880101803560208201358560018511600181146100ba5780156100d0576100d5565b8860c08603358a036101808703350893506100d5565b843593505b506100e1828486610416565b84156101085787600051068881850993508881840992508881890991506020600020600052505b60406080850160e037604080850160203780880361012052826060528160c05260406101a0606060e060075afa60406101206060602060075afa1660406101606060608060075afa166040610160608061012060065afa16604087608061016060065afa168515156101b457602051610260526040516102805260e0516101e052610100517f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4703610200525b60008611156101ee578160605260406102206060602060075afa6040610260608061022060065afa60406101e060806101a060065afa1616165b8015156102015761019060005260206000fd5b50505060409390930192505060010161008a565b50610220608461024e565b61029f1981016102a0208390068281146102405761019460005260206000fd5b50505050505050565b610411565b7f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4781356020830135604084013560608501357f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b81147f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa83147f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c285147f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed87148415861588158a15171717171717171561032c5761019060005260206000fd5b6101e051602052610200516040527f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed6080527f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c26060527f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa60c0527f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b60a0526102605160e05261028051610100528361014052826101205281610180528061016052602080610180602060085afa60205115811517156102405761019060005260206000fd5b6104c0565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000017f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4760408301356060840135608085013560a086013584838409856003878789898a090908148582830986600388868a888909090814166001891189888b06141660018b118b898d061416161615156104b55761019060005260206000fd5b505050505050505050565b6104fc565b60005b828110156104ee57606060c08202830101608081608084026103000137506001016104c8565b505060800261030020600052565b610504610506565b005b610144356101040160036002610164356101240161018435610124016101a4356101440160016101a05260606101c05260c0610200526000610240526000806102605261012435610280526102a0856020820152602086026102e00160005b878110156106355760c0810260208b0101600160005260806040820160203760c083526001602084015260208202880135604084015260a06000206060840152604060808401527f800000000000000000000000000000000000000000000000000000000000000060016060830135160260408201351760a08401527f8000000000000000000000000000000000000000000000000000000000000000600160a0830135160260808201351760c08401528383036020830260408601015260e08301925050600181019050610565565b50601f1982820390810190925260c0909101610220528587036020828101829052028101604001865b8881101561074f5760c0810260208b01016020898303028601358060408803013560016000526080604084016020378060c00185526001602086015260208b850302890135604086015260a060002060608601528060400160808601527f8000000000000000000000000000000000000000000000000000000000000000600160405116026020511760a08601527f8000000000000000000000000000000000000000000000000000000000000000600160805116026060511760c08601528060208903830160e087013785850360208c86030260408801015260208551018501945050505060018101905061065e565b5060208282030382526102a081038060a0016101e0528061010001610180526020610160528061014001610160f3fea165627a7a72305820370f7557d6a054499469a22a8719fdaddeac889cf73ad76df3942eebfe29834f0029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50610019610023565b6060604052610249565b60443560805260643560a0526101443561010401600260037f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000018061012435066024356102a05260006102c05260006102e05261007f83866104c5565b608083026103000160005b848110156102155760c081026020880101803560208201358560018511600181146100ba5780156100d0576100d5565b8860c08603358a036101808703350893506100d5565b843593505b506100e1828486610416565b84156101085787600051068881850993508881840992508881890991506020600020600052505b60406080850160e037604080850160203780880361012052826060528160c05260406101a0606060e060075afa60406101206060602060075afa1660406101606060608060075afa166040610160608061012060065afa16604087608061016060065afa168515156101b457602051610260526040516102805260e0516101e052610100517f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4703610200525b60008611156101ee578160605260406102206060602060075afa6040610260608061022060065afa60406101e060806101a060065afa1616165b8015156102015761019060005260206000fd5b50505060409390930192505060010161008a565b50610220608461024e565b61029f1981016102a0208390068281146102405761019460005260206000fd5b50505050505050565b610411565b7f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4781356020830135604084013560608501357f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b81147f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa83147f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c285147f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed87148415861588158a15171717171717171561032c5761019060005260206000fd5b6101e051602052610200516040527f1800deef121f1e76426a00665e5c4479674322d4f75edadd46debd5cd992f6ed6080527f198e9393920d483a7260bfb731fb5d25f1aa493335a9e71297e485b7aef312c26060527f12c85ea5db8c6deb4aab71808dcb408fe3d1e7690c43d37b4ce6cc0166fa7daa60c0527f090689d0585ff075ec9e99ad690c3395bc4b313370b38ef355acdadcd122975b60a0526102605160e05261028051610100528361014052826101205281610180528061016052602080610180602060085afa60205115811517156102405761019060005260206000fd5b6104c0565b7f30644e72e131a029b85045b68181585d2833e84879b9709143e1f593f00000017f30644e72e131a029b85045b68181585d97816a916871ca8d3c208c16d87cfd4760408301356060840135608085013560a086013584838409856003878789898a090908148582830986600388868a888909090814166001891189888b06141660018b118b898d061416161615156104b55761019060005260206000fd5b505050505050505050565b6104fc565b60005b828110156104ee57606060c08202830101608081608084026103000137506001016104c8565b505060800261030020600052565b610504610506565b005b610144356101040160036002610164356101240161018435610124016101a4356101440160016101a05260606101c05260c0610200526000610240526000806102605261012435610280526102a0856020820152602086026102e00160005b878110156106355760c0810260208b0101600160005260806040820160203760c083526001602084015260208202880135604084015260a06000206060840152604060808401527f800000000000000000000000000000000000000000000000000000000000000060016060830135160260408201351760a08401527f8000000000000000000000000000000000000000000000000000000000000000600160a0830135160260808201351760c08401528383036020830260408601015260e08301925050600181019050610565565b50601f1982820390810190925260c0909101610220528587036020828101829052028101604001865b8881101561074f5760c0810260208b01016020898303028601358060408803013560016000526080604084016020378060c00185526001602086015260208b850302890135604086015260a060002060608601528060400160808601527f8000000000000000000000000000000000000000000000000000000000000000600160405116026020511760a08601527f8000000000000000000000000000000000000000000000000000000000000000600160805116026060511760c08601528060208903830160e087013785850360208c86030260408801015260208551018501945050505060018101905061065e565b5060208282030382526102a081038060a0016101e0528061010001610180526020610160528061014001610160f3fea165627a7a72305820370f7557d6a054499469a22a8719fdaddeac889cf73ad76df3942eebfe29834f0029",
+  "sourceMap": "452:46:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;452:46:4;;;;;;;",
+  "deployedSourceMap": "452:46:4:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;452:46:4;1431:22:17;;;;1733:4;1727;1720:18;2530:8602;;;2606:4;2593:18;2587:4;2580:32;2655:4;2642:18;2636:4;2629:32;2715:5;2702:19;2695:5;2691:31;2748:1;2775;2810:66;2935:9;2927:5;2914:19;2910:35;3062:4;3049:18;3042:5;3035:33;3109:1;3102:5;3095:16;3153:1;3146:5;3139:16;3187:25;3210:1;3203:5;3187:25;;;3256:4;3253:1;3249:12;3242:5;3238:24;3878:1;3863:6499;3888:1;3885;3882:8;3863:6499;;;4041:4;4038:1;4034:12;4027:4;4020:5;4016:16;4012:35;5246:9;5233:23;5314:4;5303:9;5299:20;5286:34;5350:9;5394:1;5391;5388:8;5422:1;5417:397;;;;5836:83;;;;5381:538;;5417:397;5782:9;5731:4;5720:9;5716:20;5703:34;5656:9;5615:123;5567:5;5556:9;5552:21;5539:35;5499:293;5494:298;;5417:397;;5836:83;5887:9;5874:23;5869:28;;5381:538;;6004:35;6037:1;6034;6023:9;6004:35;;;6141:1;6138:2;;;6195:9;6188:4;6182:11;6178:27;6248:9;6245:1;6242;6235:23;6230:28;;6301:9;6298:1;6295;6288:23;6283:28;;6362:9;6359:1;6348:9;6341:31;6336:36;;6472:4;6466;6456:21;6450:4;6443:35;6143:357;6138:2;7003:4;6996;6985:9;6981:20;6975:4;6962:46;7070:4;7063;7052:9;7048:20;7042:4;7029:46;7125:1;7114:9;7110:17;7103:5;7096:32;7163:1;7157:4;7150:15;7199:1;7193:4;7186:15;7605:4;7598:5;7592:4;7586;7583:1;7578:3;7567:43;7691:4;7684:5;7678:4;7672;7669:1;7664:3;7653:43;7641:56;7778:4;7771:5;7765:4;7759;7756:1;7751:3;7740:43;7728:56;8065:4;8058:5;8052:4;8045:5;8042:1;8037:3;8026:44;8014:57;8300:4;8297:1;8291:4;8284:5;8281:1;8276:3;8265:40;8253:53;8351:8;;8348:2;;;8415:4;8409:11;8402:5;8395:26;8466:4;8460:11;8453:5;8446:26;8517:4;8511:11;8504:5;8497:26;8697:5;8691:12;8623:66;8619:85;8584:5;8548:186;8348:2;9044:1;9041;9038:8;9035:2;;;9142:1;9136:4;9129:15;9559:4;9552:5;9546:4;9540;9537:1;9532:3;9521:43;9448:4;9441:5;9435:4;9428:5;9425:1;9420:3;9409:44;9366:4;9359:5;9353:4;9346:5;9343:1;9338:3;9327:44;9286:201;9249:345;9180:440;9035:2;10225:6;10218:14;10215:2;;;10248:3;10242:4;10235:17;10266:4;10260;10253:18;10215:2;-1:-1:-1;;;10306:4:17;10299:12;;;;;-1:-1:-1;;3905:4:17;3898:12;3863:6499;;;3867:14;10380:21;10396:4;10380:21;;;-1:-1:-1;;10725:13:17;;10732:5;10708:31;10704:47;;;10779:23;;;10769:2;;10889:3;10883:4;10876:17;10927:4;10921;10914:18;10769:2;2562:8570;;;;;;;;;11382:2508;;;11448:66;11558:2;11545:16;11613:4;11609:2;11605:13;11592:27;11671:4;11667:2;11663:13;11650:27;11729:4;11725:2;11721:13;11708:27;12324:65;12316:6;12313:77;12223:66;12215:6;12212:78;12122:66;12114:6;12111:78;12021:66;12013:6;12010:78;11980:6;11973:14;11943:6;11936:14;11906:6;11899:14;11870:6;11863:14;11839:75;11836:115;11833:155;11830:259;11827:363;11824:467;11821:570;11818:2;;;12443:3;12437:4;12430:17;12481:4;12475;12468:18;11818:2;12874:5;12868:12;12862:4;12855:26;12940:5;12934:12;12928:4;12921:26;13000:66;12994:4;12987:80;13097:66;13091:4;13084:80;13194:66;13188:4;13181:80;13291:65;13285:4;13278:79;13393:5;13387:12;13381:4;13374:26;13460:5;13454:12;13447:5;13440:27;13521:6;13514:5;13507:21;13559:6;13552:5;13545:21;13597:6;13590:5;13583:21;13635:6;13628:5;13621:21;13713:4;13707;13700:5;13694:4;13691:1;13686:3;13675:43;13772:4;13766:11;13759:19;13749:7;13742:15;13739:40;13736:2;;;13815:3;13809:4;13802:17;13853:4;13847;13840:18;11411:2479;14229:1994;;;14304:66;14406;14526:4;14520;14516:15;14503:29;14586:4;14580;14576:15;14563:29;14646:4;14640;14636:15;14623:29;14706:4;14700;14696:15;14683:29;16008:11;16000:6;15992;15985:35;15914:11;15879:1;15833:11;15825:6;15811:11;15803:6;15795;15788:35;15781:64;15741:214;15691:355;15627:11;15619:6;15611;15604:35;15533:11;15498:1;15452:11;15444:6;15430:11;15422:6;15414;15407:35;15400:64;15360:214;15310:355;15281:791;15166:1;15163;15160:8;15096:1;15084:9;15081:1;15077:17;15074:24;15041:188;14943:1;14940;14937:8;14873:1;14861:9;14858:1;14854:17;14851:24;14818:197;14789:466;14760:1334;14732:1380;14729:2;;;16148:3;16142:4;16135:17;16186:4;16180;16173:18;14729:2;14269:1954;;;;;;;;;;;16814:330;;;16882:1;16867:202;16892:1;16889;16886:8;16867:202;;;16978:4;16970;16967:1;16963:12;16956:5;16952:24;16948:35;17046:4;17039:5;17031:4;17028:1;17024:12;17017:5;17013:24;17000:51;-1:-1:-1;16909:4:17;16902:12;16867:202;;;-1:-1:-1;;17123:4:17;17116:12;17109:5;17099:30;17093:4;17086:44;16849:295;;17340:38;:36;:38::i;:::-;452:46:4;1453:9245:18;1602:5;1589:19;1582:5;1578:31;1631:1;1654;1711:5;1698:19;1691:5;1687:31;1811:5;1798:19;1791:5;1787:31;1908:5;1895:19;1888:5;1884:31;3912:4;3905:5;3898:19;3991:4;3984:5;3977:19;4125:4;4118:5;4111:19;4264:4;4257:5;4250:19;4485:1;4513:7;4506:5;4499:22;4595:5;4582:19;4575:5;4568:34;4632:5;4733:1;4726:4;4716:8;4712:19;4705:30;4902:4;4899:1;4895:12;4888:5;4884:24;4937:1;4922:2127;4947:1;4944;4941:8;4922:2127;;;5036:4;5033:1;5029:12;5022:4;5015:5;5011:16;5007:35;5121:4;5115;5108:18;5211:4;5204;5193:9;5189:20;5183:4;5170:46;5309:4;5306:1;5299:15;5410:4;5403;5400:1;5396:12;5389:26;5540:4;5537:1;5533:12;5520:11;5516:30;5503:44;5496:4;5493:1;5489:12;5482:66;5664:4;5658;5648:21;5641:4;5638:1;5634:12;5627:43;5792:4;5785;5782:1;5778:12;5771:26;6144:66;6109:4;6101;6090:9;6086:20;6073:34;6069:45;6036:200;6004:4;5993:9;5989:20;5976:34;5948:310;5921:4;5918:1;5914:12;5886:390;6623:66;6588:4;6580;6569:9;6565:20;6552:34;6548:45;6515:200;6483:4;6472:9;6468:20;6455:34;6427:310;6400:4;6397:1;6393:12;6365:390;6910:8;6907:1;6903:16;6895:4;6892:1;6888:12;6881:4;6871:8;6867:19;6863:38;6856:64;7030:4;7027:1;7023:12;7018:17;;4972:2077;4964:4;4961:1;4957:12;4952:17;;4922:2127;;;-1:-1:-1;;;7219:16:18;;;7215:27;;;7198:45;;;7274:4;7270:27;;;7263:5;7256:42;7412:9;;;7237:4;7391:19;;;7384:38;;;7489:20;7472:39;;7483:4;7472:39;7419:1;7553:2474;7578:1;7575;7572:8;7553:2474;;;7701:4;7698:1;7694:12;7687:4;7680:5;7676:16;7672:35;7830:4;7826:1;7823;7819:9;7815:20;7805:8;7801:35;7788:49;7954:13;7947:4;7937:8;7933:19;7929:39;7916:53;8000:4;7994;7987:18;8139:4;8132;8121:9;8117:20;8111:4;8098:46;8246:14;8240:4;8236:25;8233:1;8226:36;8358:4;8351;8348:1;8344:12;8337:26;8508:4;8504:1;8501;8497:9;8493:20;8479:12;8475:39;8462:53;8455:4;8452:1;8448:12;8441:75;8605:4;8599;8589:21;8582:4;8579:1;8575:12;8568:43;8719:14;8713:4;8709:25;8702:4;8699:1;8695:12;8688:47;9036:66;9001:4;8994;8988:11;8984:22;8951:177;8920:4;8914:11;8886:264;8859:4;8856:1;8852:12;8824:344;9445:66;9414:4;9407;9401:11;9397:22;9368:165;9341:4;9335:11;9311:240;9288:4;9285:1;9281:12;9257:312;9703:14;9695:4;9685:8;9681:19;9666:13;9662:39;9655:4;9652:1;9648:12;9635:83;9881:8;9878:1;9874:16;9866:4;9862:1;9859;9855:9;9851:20;9844:4;9834:8;9830:19;9826:46;9819:72;10007:4;10003:1;9997:8;9993:19;9990:1;9986:27;9981:32;;7603:2424;;;7595:4;7592:1;7588:12;7583:17;;7553:2474;;;7557:14;10149:4;10138:8;10135:1;10131:16;10127:27;10117:8;10110:45;10249:5;10246:1;10242:13;10462:11;10456:4;10452:22;10445:5;10438:37;10513:11;10506:5;10502:23;10495:5;10488:38;10595:4;10588:5;10581:19;10638:11;10631:5;10627:23;10620:5;10613:38",
+  "source": "\npragma solidity >= 0.5.0 <0.7.0;\n\n\nimport \"@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupply.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwap.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputation.sol\";\nimport \"@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol\";\n\ncontract TestPrivateRange is PrivateRange {\n\n}\n\ncontract TestAdjustSupply is AdjustSupply {\n\n}\ncontract TestBilateralSwap is BilateralSwap {\n\n}\ncontract TestJoinSplit is JoinSplit {\n\n}\n\ncontract TestDividendComputation is DividendComputation {\n\n}\n",
+  "sourcePath": "/Users/patricio/workspace/research/privacy/aztec/loan-dapp/contracts/TestAdjustSupply.sol",
+  "ast": {
+    "absolutePath": "/Users/patricio/workspace/research/privacy/aztec/loan-dapp/contracts/TestAdjustSupply.sol",
+    "exportedSymbols": {
+      "TestAdjustSupply": [
+        1740
+      ],
+      "TestBilateralSwap": [
+        1743
+      ],
+      "TestDividendComputation": [
+        1749
+      ],
+      "TestJoinSplit": [
+        1746
+      ],
+      "TestPrivateRange": [
+        1737
+      ]
+    },
+    "id": 1750,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1729,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1:32:4"
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupply.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupply.sol",
+        "id": 1730,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3276,
+        "src": "36:80:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwap.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwap.sol",
+        "id": 1731,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3298,
+        "src": "117:82:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "id": 1732,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3344,
+        "src": "200:74:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputation.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputation.sol",
+        "id": 1733,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3321,
+        "src": "275:94:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "id": 1734,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3367,
+        "src": "370:80:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1735,
+              "name": "PrivateRange",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3366,
+              "src": "481:12:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PrivateRange_$3366",
+                "typeString": "contract PrivateRange"
+              }
+            },
+            "id": 1736,
+            "nodeType": "InheritanceSpecifier",
+            "src": "481:12:4"
+          }
+        ],
+        "contractDependencies": [
+          3366
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1737,
+        "linearizedBaseContracts": [
+          1737,
+          3366
+        ],
+        "name": "TestPrivateRange",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "452:46:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1738,
+              "name": "AdjustSupply",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3275,
+              "src": "529:12:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AdjustSupply_$3275",
+                "typeString": "contract AdjustSupply"
+              }
+            },
+            "id": 1739,
+            "nodeType": "InheritanceSpecifier",
+            "src": "529:12:4"
+          }
+        ],
+        "contractDependencies": [
+          3275,
+          4688
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1740,
+        "linearizedBaseContracts": [
+          1740,
+          3275,
+          4688
+        ],
+        "name": "TestAdjustSupply",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "500:46:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1741,
+              "name": "BilateralSwap",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3297,
+              "src": "577:13:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BilateralSwap_$3297",
+                "typeString": "contract BilateralSwap"
+              }
+            },
+            "id": 1742,
+            "nodeType": "InheritanceSpecifier",
+            "src": "577:13:4"
+          }
+        ],
+        "contractDependencies": [
+          3297
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1743,
+        "linearizedBaseContracts": [
+          1743,
+          3297
+        ],
+        "name": "TestBilateralSwap",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "547:48:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1744,
+              "name": "JoinSplit",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3343,
+              "src": "622:9:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_JoinSplit_$3343",
+                "typeString": "contract JoinSplit"
+              }
+            },
+            "id": 1745,
+            "nodeType": "InheritanceSpecifier",
+            "src": "622:9:4"
+          }
+        ],
+        "contractDependencies": [
+          3343
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1746,
+        "linearizedBaseContracts": [
+          1746,
+          3343
+        ],
+        "name": "TestJoinSplit",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "596:40:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1747,
+              "name": "DividendComputation",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3320,
+              "src": "674:19:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DividendComputation_$3320",
+                "typeString": "contract DividendComputation"
+              }
+            },
+            "id": 1748,
+            "nodeType": "InheritanceSpecifier",
+            "src": "674:19:4"
+          }
+        ],
+        "contractDependencies": [
+          3320
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1749,
+        "linearizedBaseContracts": [
+          1749,
+          3320
+        ],
+        "name": "TestDividendComputation",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "638:60:4"
+      }
+    ],
+    "src": "1:698:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/patricio/workspace/research/privacy/aztec/loan-dapp/contracts/TestAdjustSupply.sol",
+    "exportedSymbols": {
+      "TestAdjustSupply": [
+        1740
+      ],
+      "TestBilateralSwap": [
+        1743
+      ],
+      "TestDividendComputation": [
+        1749
+      ],
+      "TestJoinSplit": [
+        1746
+      ],
+      "TestPrivateRange": [
+        1737
+      ]
+    },
+    "id": 1750,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1729,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "1:32:4"
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupply.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/adjustSupply/AdjustSupply.sol",
+        "id": 1730,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3276,
+        "src": "36:80:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwap.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/bilateralSwap/BilateralSwap.sol",
+        "id": 1731,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3298,
+        "src": "117:82:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/joinSplit/JoinSplit.sol",
+        "id": 1732,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3344,
+        "src": "200:74:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputation.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/dividendComputation/DividendComputation.sol",
+        "id": 1733,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3321,
+        "src": "275:94:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "file": "@aztec/protocol/contracts/ACE/validators/privateRange/PrivateRange.sol",
+        "id": 1734,
+        "nodeType": "ImportDirective",
+        "scope": 1750,
+        "sourceUnit": 3367,
+        "src": "370:80:4",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1735,
+              "name": "PrivateRange",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3366,
+              "src": "481:12:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PrivateRange_$3366",
+                "typeString": "contract PrivateRange"
+              }
+            },
+            "id": 1736,
+            "nodeType": "InheritanceSpecifier",
+            "src": "481:12:4"
+          }
+        ],
+        "contractDependencies": [
+          3366
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1737,
+        "linearizedBaseContracts": [
+          1737,
+          3366
+        ],
+        "name": "TestPrivateRange",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "452:46:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1738,
+              "name": "AdjustSupply",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3275,
+              "src": "529:12:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_AdjustSupply_$3275",
+                "typeString": "contract AdjustSupply"
+              }
+            },
+            "id": 1739,
+            "nodeType": "InheritanceSpecifier",
+            "src": "529:12:4"
+          }
+        ],
+        "contractDependencies": [
+          3275,
+          4688
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1740,
+        "linearizedBaseContracts": [
+          1740,
+          3275,
+          4688
+        ],
+        "name": "TestAdjustSupply",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "500:46:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1741,
+              "name": "BilateralSwap",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3297,
+              "src": "577:13:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_BilateralSwap_$3297",
+                "typeString": "contract BilateralSwap"
+              }
+            },
+            "id": 1742,
+            "nodeType": "InheritanceSpecifier",
+            "src": "577:13:4"
+          }
+        ],
+        "contractDependencies": [
+          3297
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1743,
+        "linearizedBaseContracts": [
+          1743,
+          3297
+        ],
+        "name": "TestBilateralSwap",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "547:48:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1744,
+              "name": "JoinSplit",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3343,
+              "src": "622:9:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_JoinSplit_$3343",
+                "typeString": "contract JoinSplit"
+              }
+            },
+            "id": 1745,
+            "nodeType": "InheritanceSpecifier",
+            "src": "622:9:4"
+          }
+        ],
+        "contractDependencies": [
+          3343
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1746,
+        "linearizedBaseContracts": [
+          1746,
+          3343
+        ],
+        "name": "TestJoinSplit",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "596:40:4"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 1747,
+              "name": "DividendComputation",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 3320,
+              "src": "674:19:4",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_DividendComputation_$3320",
+                "typeString": "contract DividendComputation"
+              }
+            },
+            "id": 1748,
+            "nodeType": "InheritanceSpecifier",
+            "src": "674:19:4"
+          }
+        ],
+        "contractDependencies": [
+          3320
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 1749,
+        "linearizedBaseContracts": [
+          1749,
+          3320
+        ],
+        "name": "TestDividendComputation",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 1750,
+        "src": "638:60:4"
+      }
+    ],
+    "src": "1:698:4"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2021-09-17T17:40:15.175Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

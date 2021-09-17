@@ -7,7 +7,7 @@
 
 # production
 /build
-/src/contracts
+#/src/contracts
 
 
 npm-debug.log*

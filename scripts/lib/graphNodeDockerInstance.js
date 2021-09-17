@@ -20,7 +20,7 @@ export default function graphNodeDockerInstance({
         if (!graphNodeContainerId) {
           return;
         }
-
+        log('graphNodeDockerInstance.handleClearContainers docker stop ', graphNodeContainerId);
         return instance(
           `docker stop ${graphNodeContainerId}`,
         );

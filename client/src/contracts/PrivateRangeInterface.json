@@ -1,0 +1,465 @@
+{
+  "contractName": "PrivateRangeInterface",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "uint256[6]"
+        }
+      ],
+      "name": "validatePrivateRange",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bytes"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "pure",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.5.0 <0.6.0;\n\n\n/**\n * @title PrivateRangeInterface\n * @author AZTEC\n * @dev An interface defining the PrivateRangeInterface standard.\n * Copyright Spilbury Holdings Ltd 2019. All rights reserved.\n **/\ninterface PrivateRangeInterface {\n    /* solhint-disable-next-line var-name-mixedcase */\n    \n    function validatePrivateRange(\n        bytes calldata, \n        address, \n        uint[6] calldata\n    ) external pure returns (bytes memory);\n}\n",
+  "sourcePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+  "ast": {
+    "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+    "exportedSymbols": {
+      "PrivateRangeInterface": [
+        4586
+      ]
+    },
+    "id": 4587,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4572,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:28"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title PrivateRangeInterface\n@author AZTEC\n@dev An interface defining the PrivateRangeInterface standard.\nCopyright Spilbury Holdings Ltd 2019. All rights reserved.*",
+        "fullyImplemented": false,
+        "id": 4586,
+        "linearizedBaseContracts": [
+          4586
+        ],
+        "name": "PrivateRangeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4585,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validatePrivateRange",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "357:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 4573,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4576,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "382:7:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4575,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "382:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4580,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "400:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4577,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "400:4:28",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4579,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 4578,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "405:1:28",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "400:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:75:28"
+            },
+            "returnParameters": {
+              "id": 4584,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4583,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "446:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 4582,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "446:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "445:14:28"
+            },
+            "scope": 4586,
+            "src": "318:142:28",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4587,
+        "src": "220:242:28"
+      }
+    ],
+    "src": "0:463:28"
+  },
+  "legacyAST": {
+    "absolutePath": "@aztec/protocol/contracts/interfaces/PrivateRangeInterface.sol",
+    "exportedSymbols": {
+      "PrivateRangeInterface": [
+        4586
+      ]
+    },
+    "id": 4587,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 4572,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:31:28"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": "@title PrivateRangeInterface\n@author AZTEC\n@dev An interface defining the PrivateRangeInterface standard.\nCopyright Spilbury Holdings Ltd 2019. All rights reserved.*",
+        "fullyImplemented": false,
+        "id": 4586,
+        "linearizedBaseContracts": [
+          4586
+        ],
+        "name": "PrivateRangeInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 4585,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "validatePrivateRange",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 4581,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "357:14:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 4573,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "357:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4576,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "382:7:28",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 4575,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "382:7:28",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 4580,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "400:16:28",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$6_calldata_ptr",
+                    "typeString": "uint256[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 4577,
+                      "name": "uint",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "400:4:28",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 4579,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "36",
+                      "id": 4578,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "405:1:28",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": null,
+                        "typeString": null
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "400:7:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$6_storage_ptr",
+                      "typeString": "uint256[6]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "347:75:28"
+            },
+            "returnParameters": {
+              "id": 4584,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 4583,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 4585,
+                  "src": "446:12:28",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 4582,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "446:5:28",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "445:14:28"
+            },
+            "scope": 4586,
+            "src": "318:142:28",
+            "stateMutability": "pure",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 4587,
+        "src": "220:242:28"
+      }
+    ],
+    "src": "0:463:28"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.4+commit.9549d8ff.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2021-09-17T17:40:15.204Z",
+  "devdoc": {
+    "author": "AZTEC",
+    "details": "An interface defining the PrivateRangeInterface standard. Copyright Spilbury Holdings Ltd 2019. All rights reserved.*",
+    "methods": {},
+    "title": "PrivateRangeInterface"
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

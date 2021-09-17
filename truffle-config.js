@@ -15,10 +15,11 @@ module.exports = {
   },
   networks: {
     development: {
-      host: '127.0.0.1',
-      network_id: '33',
-      port: 4445,
-      gasPrice: 60000000
+      host: '3.121.224.242',
+      network_id: '31',
+      port: 4444,
+      gasPrice: 120000000,
+      from: "0xd4bd721748adcbf6c48a55b590b9bf5bf70a7dfb"
     },
     test: {
       host: '127.0.0.1',

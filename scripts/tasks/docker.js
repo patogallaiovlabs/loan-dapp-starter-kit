@@ -26,7 +26,7 @@ export default function docker({
   terminal.on('key', (key) => {
     switch (key) {
       case 'CTRL_C': {
-        log('Stopping docker...');
+        log('Stopping docker before killing processes...');
         dockerCp.clear();
         break;
       }

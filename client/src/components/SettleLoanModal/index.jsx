@@ -180,7 +180,8 @@ class SettleLoanModal extends PureComponent {
       sharedSecret,
     } = notionalNote;
     const amount = +notionalValue;
-
+    console.log('SettleLoanModal.settleLoan().notionalValue', notionalValue);
+    console.log('SettleLoanModal.settleLoan().amount', amount);
     try {
       const settledAmount = await settleLoan({
         loanAddress,
@@ -190,6 +191,7 @@ class SettleLoanModal extends PureComponent {
         sharedSecret,
       });
 
+      console.log('SettleLoanModal.settleLoan().settledAmount', settledAmount);
       if (settledAmount !== amount) {
         this.goToStep('settle-failed');
         return;

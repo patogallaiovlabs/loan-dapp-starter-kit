@@ -63,7 +63,11 @@
     "resetdb": "babel-node scripts/run resetdb",
     "start": "babel-node scripts/run start",
     "start-rsk": "babel-node scripts/run start --rsk=rsk",
-    "test": "NODE_ENV=test babel-node scripts/run test"
+    "test": "NODE_ENV=test babel-node scripts/run test",
+
+    "graph-start": "cd graph/ && babel-node scripts/run graph/deploy",
+    "graph-deploy": "babel-node scripts/run graph/deploy",
+    "client-start": "cd client && npm start"
   },
   "config": {
     "mnemonic": "delay jaguar benefit bullet shock split short grape sudden embrace appear noodle"

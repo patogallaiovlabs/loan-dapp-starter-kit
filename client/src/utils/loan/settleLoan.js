@@ -19,6 +19,7 @@ export default async function settleLoan({
   const publicKey = await AuthService.getPublicKey();
 
   const currencyContractAddress = CurrencyService.getZKAddress(currencyId);
+  console.log('utils/loan/settleLoan.settleLoan() - mintNote()');
   const settlementNote = await mintNote({
     amount,
     currencyContractAddress,
@@ -28,12 +29,14 @@ export default async function settleLoan({
     noteHash: settlementNoteHash,
   } = settlementNote.exportNote();
 
+  console.log('utils/loan/settleLoan.settleLoan() - signNote()');
   const settlementSignature = await signNote({
     validatorAddress: currencyContractAddress,
     noteHash: settlementNoteHash,
     spender: loanAddress,
   });
 
+  console.log('utils/loan/settleLoan.settleLoan() - ZKERC20.confidentialApprove.send()');
   await Web3Service.useContract('ZKERC20')
     .at(currencyContractAddress)
     .method('confidentialApprove')
@@ -64,6 +67,7 @@ export default async function settleLoan({
     noteHash: notionalAskNoteHash,
   } = loanBalanceNote.exportNote();
 
+  console.log('utils/loan/settleLoan.settleLoan() - LoanDapp.settleInitialBalance.send()');
   await Web3Service.useContract('LoanDapp')
     .method('settleInitialBalance')
     .send(
@@ -72,6 +76,7 @@ export default async function settleLoan({
       notionalAskNoteHash,
     );
 
+  console.log('utils/loan/settleLoan.settleLoan() - approveNoteAccess()');
   await approveNoteAccess({
     note: loanBalanceNote,
     shareWith: borrower,

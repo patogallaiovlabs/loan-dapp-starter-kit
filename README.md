@@ -29,6 +29,9 @@ This repo requires the following minimum versions installed in the developer env
 `Yarn - 1.15`
 <br />
 <br />
+`Node Rskj - Synchronized with testnet (at least from block 2178053)`
+<br />
+<br />
 
 ### Getting started:
 
@@ -45,21 +48,31 @@ This copies the local file to a local .env file that ganache will use to determi
 
 5. `cd client && yarn install`
 
-6. `cd .. && yarn start`
+6. Start the graph node: `yarn graph-start`
 
-The start script will do the following:
-  - Start ganache, importing any accounts from the .env file
-  - Compile and migrate both the dApp contracts and AZTEC and deploy the contracts the the local blockchain
-  - Start a docker container that runs the graph-node
-  - Build the graph-node mappings and deploy them to the graph-node
-  - Copy the truffle build artefacts to the client for interaction with the contracts (ABIs)
+7. Deploy the graph-node mappings to the graph-node: `yarn graph-deploy`
 
-7. In a new terminal window `yarn client`
+7. In a new terminal window `yarn graph-deploy` 
+  - (this step is only requiered for the FIRST time)
 
-This command will run the create-react-app and host the client at localhost:3000
+8. In this new terminal window `yarn client-start`
+  - This command will run the create-react-app and host the client at localhost:3000
 
-Navigate to http://localhost:3000 and click the restore account button.
+9. Navigate to http://localhost:3000 and click the create account button. Save the seed phrase, the private key and the address.
 
-Ganache has been started with 3 deterministic development accounts, each funded with 1000 ETH (Wahoo). You can restore the first account by using the seed phrase `office shallow practice favorite diary review floor quote faith initial foot squeeze`.
+10. With that address, go to https://faucet.rsk.co/ , to add some funds to this account.
 
-Enter any password to encrypt the hot-wallet keystore vault and press restore to enter the dApp!
+11. Next, we have to add the account to the node (for the purpose of this DEMO, we have use the account management of the node to send transactions, in future proposal could be replace by a personal wallet). In order to do that we can do a POST like this:
+
+```
+{
+    "jsonrpc": "2.0",
+    "method": "personal_newAccountWithSeed",
+    "params": ["cube learn hawk valley ..."],
+    "id": 1
+}
+```
+
+12. Repeat 10 and 11, as many times as you like to add new accounts and start playing with each other!
+
+Enjoy!

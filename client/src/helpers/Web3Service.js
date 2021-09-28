@@ -86,7 +86,7 @@ class Web3Service {
       log('Injected web3 detected.');
     } else { // Fallback to localhost; use dev console port by default...
       const provider = new Web3.providers.HttpProvider(
-        'http://127.0.0.1:9545',
+        'http://3.121.224.242:4444',
       );
       web3 = new Web3(provider);
       log('No web3 instance injected, using Local web3.');
